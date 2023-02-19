@@ -8,7 +8,7 @@
  * main - Entry point
  *
  * Return: Always 0 (Success)
- */
+ **/
 int main(void)
 {
 	int n;
@@ -18,15 +18,15 @@ int main(void)
 	/* your code goes there */
 	if (n > 0)
 	{
-	printf("%s",n +" is positive");
+	printf("%d %s",n, "is positive");
 	}
 	else if (n == 0)
 	{
-	printf("%s", n+" is zero");
+	printf("%d %s", n, "is zero");
 	}
 	else
 	{
-	printf("%s", n+" is negative");
+	printf("%d %s", n, "is negative");
 	}
 	return (0);
 }
