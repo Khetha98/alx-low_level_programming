@@ -13,5 +13,6 @@ for (i = 0; i < 10; i++)
 {
 printf("%d", i);
 }
+printf("%c", "\n");
 return (0);
 }
