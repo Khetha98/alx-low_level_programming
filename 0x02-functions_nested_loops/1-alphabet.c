@@ -22,3 +22,4 @@ putchar(c);
 c++;
 }
 putchar('\n');
+}
