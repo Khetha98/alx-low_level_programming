@@ -1,4 +1,4 @@
-#include "main.h"
+#Iinclude "main.h"
 #include <stdio.h>
 /**
  * main - check the code
@@ -13,7 +13,7 @@ print_alphabet();
 return (0);
 }
 
-print_alphabet(void)
+void print_alphabet(void)
 {
 char c = 'a';
 while (c <= 'z')
