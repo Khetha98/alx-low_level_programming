@@ -1,17 +1,19 @@
 #include "main.h"
 
 /**
- * print_alphabet - see description below
- * Description: prints out alphabets from a toz ten times
+ * print_alphabet_x10 - see description below
+ * Description: prints out alphabets from a to z ten times
  * Return: void/nothing
  **/
 
-void print_alphabet_x10(void){
+void print_alphabet_x10(void)
+{
 int i;
 for (i = 1; i <= 10; i++)
 {
 char c = 'a';
-while (c <= 'z'){
+while (c <= 'z')
+{
 _putchar(c);
 c++;
 }
