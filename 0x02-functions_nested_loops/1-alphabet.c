@@ -5,6 +5,7 @@
  *
  * Return: Always 0.
  */
+
 void print_alphabet(void);
 int main(void)
 {
@@ -13,6 +14,15 @@ return (0);
 }
 
 print_alphabet(void)
+{
+char c = 'a';
+while (c <= 'z')
+{
+putchar(c);
+c++;
+}
+putchar('\n');
+}print_alphabet(void)
 {
 char c = 'a';
 while (c <= 'z')
