@@ -1,10 +1,10 @@
-#Iinclude "main.h"
+#include "main.h"
 #include <stdio.h>
 /**
  * main - check the code
  *
- * Return: Always 0.
- */
+ * Return: Always 0 (Success)
+ **/
 
 void print_alphabet(void);
 int main(void)
