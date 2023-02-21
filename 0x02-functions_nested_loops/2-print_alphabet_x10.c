@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_alphabet - see description below
  * Description: prints out alphabets from a toz ten times
