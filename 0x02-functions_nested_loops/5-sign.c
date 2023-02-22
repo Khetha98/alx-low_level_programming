@@ -2,10 +2,11 @@
 #include "main.h"
 
 /**
- * int print_sign - see description
+ * print_sign - see description
  * @n: is an input parameter
  * Description: checks if a number is zero, positive or negative
- * Return: gives 0 if number is zero, 1 if number is positive and -1 if negative
+ * Return: gives 0 if number is zero, 1 if is positive
+ * or -1 if negative 
  **/
 
 int print_sign(int n)
