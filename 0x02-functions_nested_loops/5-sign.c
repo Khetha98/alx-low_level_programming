@@ -6,7 +6,7 @@
  * @n: is an input parameter
  * Description: checks if a number is zero, positive or negative
  * Return: gives 0 if number is zero, 1 if is positive
- * or -1 if negative 
+ * or -1 if negative
  **/
 
 int print_sign(int n)
