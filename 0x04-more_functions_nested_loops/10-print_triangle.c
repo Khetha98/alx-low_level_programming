@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * print_triangle -  is a function that prints a triangle, followed by a new line.
+ * print_triangle - a function that prints a triangle, followed by a new line.
  * @size: An input integer
  * Return: Always 0 (Success)
  */
