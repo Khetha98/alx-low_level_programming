@@ -3,8 +3,8 @@
 /**
  * swap_int - takes in two integer values
  * and swap their values
- * @a - First integer input
- * @b - Second integer input
+ * @a: First integer input
+ * @b:  Second integer input
  * Return: void/nothing.
  **/
 
