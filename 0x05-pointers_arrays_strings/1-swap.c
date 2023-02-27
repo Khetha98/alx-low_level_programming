@@ -1,0 +1,16 @@
+# include "main.h"
+
+/**
+ * swap.c - takes in two integer values
+ * and swap their values
+ * @a - First integer input
+ * @b - Second integer input
+ * Return: void/nothing.
+ **/
+
+void void swap_int(int *a, int *b){
+int z;
+z = *a
+*a = b;
+*b = z;
+}
