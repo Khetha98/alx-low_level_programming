@@ -2,8 +2,8 @@
 
 /**
  * list_len - Calculate the number of elements.
- * @h: Pointer to a list.
- * Return: Integer.
+ * @h: Pointer to a list inside parenthesis.
+ * Return: Integer at end.
  **/
 
 size_t list_len(const list_t *h)
