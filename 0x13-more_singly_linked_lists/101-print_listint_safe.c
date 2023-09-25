@@ -1,39 +1,70 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - prints the linked list, safely
- * @head: list of type listint_t to be printed
+ * free_listp - frees the linked list
+ * @head: head of the list.
+ * Return: returns nothing.
+ */
+
+void free_listp(listp_t **head)
+{
+	listp_t *temp;
+	listp_t *curr;
+
+	if (head != NULL)
+	{
+		curr = *head;
+		while ((temp = curr) != NULL)
+		{
+			curr = curr->next;
+			free(temp);
+		}
+		*head = NULL;
+	}
+}
+
+/**
+ * print_listint_safe - prints the linked list.
+ * @head: head of the list.
  *
- * Return: the number of nodes of the list
+ * Return: number of nodes at the list.
  */
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *tmp_n = NULL;
-	const listint_t *l_n = NULL;
-	size_t counter = 0;
-	size_t new_n;
+	size_t numnodes = 0;
+	listp_t *hptr, *new, *add;
 
-	tmp_n = head;
-	while (tmp_n)
+	hptr = NULL;
+	while (head != NULL)
 	{
-		printf("[%p] %d\n", (void *)tmp_n, tmp_n->n);
-		counter++;
-		tmp_n = tmp_n->next;
-		l_n = head;
-		new_n = 0;
-		while (new_n < counter)
-		{
-			if (tmp_n == l_n)
-			{
-				printf("-> [%p] %d\n", (void *)tmp_n, tmp_n->n);
-				return (counter);
-			}
-			l_n = l_n->next;
-			new_n++;
-		}
-		if (!head)
+		new = malloc(sizeof(listp_t));
+
+		if (new == NULL)
 			exit(98);
+
+		new->p = (void *)head;
+		new->next = hptr;
+		hptr = new;
+
+		add = hptr;
+
+		while (add->next != NULL)
+		{
+			add = add->next;
+			if (head == add->p)
+			{
+				printf("-> [%p] %d\n", (void *)head, head->n);
+				free_listp(&hptr);
+				return (numnodes);
+			}
+		}
+
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
+		numnodes++;
 	}
-	return (counter);
+
+	free_listp(&hptr);
+	return (numnodes);
 }
