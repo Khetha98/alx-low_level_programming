@@ -1,29 +1,77 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
- * print_listint_safe - prints the linked list
- * @head: list type listint_t to print
- * Return: the number of the nodes at the list
+ * looped_listint_len - calculates the length of the loop of linked list
+ * @head: pointer to the head of a linked list
+ *
+ * Return: the number of nodes at the loop, or 0 if no loop present
  */
-
-size_t print_listint_safe(const listint_t *head)
+size_t looped_listint_len(const listint_t *head)
 {
-	size_t num = 0;
-	long int diff;
+	const listint_t *slow_ptr, *fast_ptr;
+	size_t length = 1;
 
-	while (head)
+	
+	if (head == NULL || head->next == NULL)
+		return (0);
+
+	slow_ptr = head->next; 
+	fast_ptr = head->next->next; 
+
+
+	while (fast_ptr != NULL)
 	{
-		diff = head - head->next;
-		num++;
-		printf("[%p] %d\n", (void *)head, head->n);
-		if (diff > 0)
-			head = head->next;
-		else
+		if (slow_ptr == fast_ptr)
 		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
-			break;
+			slow_ptr = head;
+			while (slow_ptr != fast_ptr)
+			{
+				length++;
+				slow_ptr = slow_ptr->next;
+				fast_ptr = fast_ptr->next;
+			}
+
+			slow_ptr = slow_ptr->next;
+			while (slow_ptr != fast_ptr)
+			{
+				length++;
+				slow_ptr = slow_ptr->next;
+			}
+
+			return (length);
 		}
+
+		slow_ptr = slow_ptr->next;
+		fast_ptr = fast_ptr->next->next;
 	}
 
-	return (num);
+	return (0);
+}
+
+/**
+ * print_listint_safe - Prints the listint_t list safely.
+ * @head: A pointer to  head of a listint_t list.
+ *
+ * Return: The number of the nodes at the list.
+ */
+size_t print_listint_safe(const listint_t *head)
+{
+	size_t length, i;
+
+	length = looped_listint_len(head);
+
+	if (!length)
+	{
+		for (; head != NULL; length++, head = head->next)
+			printf("[%p] %d\n", (void *) head, head->n);
+	}
+	else
+	{
+		for (i = 0; i < length; i++, head = head->next)
+			printf("[%p] %d\n", (void *) head, head->n);
+		printf("-> [%p] %d\n", (void *) head, head->n);
+	}
+
+	return (length);
 }
