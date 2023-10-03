@@ -7,7 +7,7 @@
  * File: main.h
  * Auth: Khethukuthula Simamane
  * Desc: Header file containing the prototypes for all functions
- *       written in 0x14-file_io directory.
+ *       written in 0x15-file_io directory.
  */
 
 
