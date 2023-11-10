@@ -2,9 +2,9 @@
 
 
 /**
- * delete_dnodeint_at_index - Delete the node in nth index
+ * delete_dnodeint_at_index - Delete the n in nth index
  *
- * @head: is the Head of node
+ * @head: is the Head of n
  *
  * @index: is index
  *
@@ -14,44 +14,44 @@
 
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *node;
-	unsigned int count;
+	dlistint_t *n;
+	unsigned int c;
 
 	if (*head == NULL)
 		return (-1);
-
-	node = *head;
+	n = *head;
 	if (index == 0)
 	{
-		*head = node->next;
-		if (node->next != NULL)
+		*head = n->next;
+		if (n->next != NULL)
 		{
-			node->next->prev = NULL;
+			n->next->prev = NULL;
 		}
-		free(node);
+		free(n);
 		return (1);
 	}
-	for (count = 0; node != NULL && count < index - 1 ; count++)
+
+	for (c = 0; n != NULL && c < index - 1 ; c++)
 	{
-		node = node->next;
+		n = n->next;
 	}
-	if (node == NULL || node->next == NULL)
+	if (n == NULL || n->next == NULL)
 	{
 		return (-1);
 	}
-
-	if (node->next->next != NULL)
+	if (n->next->next != NULL)
 	{
-		node->next = node->next->next;
-		free(node->next->prev);
-		node->next->prev = node;
+		n->next = n->next->next;
+		free(n->next->prev);
+		n->next->prev = n;
 		return (1);
 	}
 	else
 	{
-		free(node->next);
-		node->next = NULL;
+		free(n->next);
+		n->next = NULL;
 		return (1);
 	}
+
 	return (-1);
 }
