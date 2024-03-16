@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * binary_search - calls to bn_search function to return
+ * bin_search - calls to bn_search function to return
  * the index of the number
  *
  * @array: it the input array
